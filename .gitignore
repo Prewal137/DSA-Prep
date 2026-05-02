@@ -1,0 +1,7 @@
+# Ignore executables
+*.exe
+
+# Optional (good practice)
+*.out
+*.o
+*.log
