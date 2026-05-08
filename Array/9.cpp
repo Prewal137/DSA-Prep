@@ -20,9 +20,9 @@ int main()
     for(int i=0;i<n;i++)
         cout<<a[i]<<" ";
     d = d % n;
-    //reverse(a, a+d); 
+    //reverse(a, a+(n-d); 
     reverse(a.begin(),a.begin()+(n-d));
-    //reverse(a+d, a+n);
+    //reverse(a+(n-d, a+n);
     reverse(a.begin()+(n-d),a.end());
     //reverse(a, a+n);
     reverse(a.begin(),a.end());
