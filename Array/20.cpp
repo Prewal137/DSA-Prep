@@ -1,4 +1,4 @@
-// sortin 0's 1's and 2's(Dutch National Flag Algorithm)
+// sorting 0's 1's and 2's(Dutch National Flag Algorithm)
 
 #include<bits/stdc++.h>
 using namespace std;
