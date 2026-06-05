@@ -1,7 +1,14 @@
 //Merge two sorted arrays without extra space
-//Solution 1 using two pointers and sorting
+//Solution 2 using the gap method
 #include<bits/stdc++.h>
 using namespace std;
+void swapIfGreater(vector<int>& arr1, vector<int>& arr2, int ind1, int ind2)
+{
+    if(arr1[ind1] > arr2[ind2])
+    {
+        swap(arr1[ind1], arr2[ind2]);
+    }
+}
 int main()
 {
     int n,m;
@@ -17,21 +24,26 @@ int main()
     cout<<"Enter the elements in array2 in sorted form: ";
     for(int i=0;i<m;i++)
         cin>>arr2[i];
-    int left=n-1;
-    int right=0;
-    while(left>=0 && right<m)
+    int len=n+m;
+    int gap=(len/2)+(len%2);
+    while(gap>0)
     {
-        if(arr1[left]>arr2[right])
+        int left=0;
+        int right=left+gap;
+        while(right<len)
         {
-            swap(arr1[left],arr2[right]);
-            left--;
+            if(left<n && right>=n)
+                swapIfGreater(arr1,arr2,left,right-n);
+            else if(left>=n)
+                swapIfGreater(arr2,arr2,left-m,right-m);
+            else
+                swapIfGreater(arr1,arr1,left,right);
+            left++;
             right++;
         }
-        else
-            break;
+        if(gap==1) break;
+        gap=(gap/2)+(gap%2);
     }
-    sort(arr1.begin(),arr1.end());
-    sort(arr2.begin(),arr2.end());
     cout<<"\nArray1: ";
     for(auto x : arr1)
         cout<<x<<" ";
