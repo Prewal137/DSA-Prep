@@ -1,4 +1,4 @@
-//upper bound of an element in a sorted array
+//Search Insertion Position
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -20,7 +20,7 @@ int main()
     while(low<=high)
     {
         int mid=(low+high)/2;
-        if(a[mid]>target)
+        if(a[mid]>=target)
         {
             ans=mid;
             high=mid-1;
@@ -28,6 +28,6 @@ int main()
         else
             low=mid+1;
     }
-    cout<<"The upper bound of the array is "<<ans<<endl;
+    cout<<"The search insertion position of the array is "<<ans<<endl;
     return 0;
 }
