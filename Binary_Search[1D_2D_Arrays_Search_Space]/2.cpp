@@ -1,4 +1,4 @@
-//lower bound of an element in a sorted array
+//upper bound of an element in a sorted array
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -20,7 +20,7 @@ int main()
     while(low<=high)
     {
         int mid=(low+high)/2;
-        if(a[mid]>=target)
+        if(a[mid]>target)
         {
             ans=mid;
             high=mid-1;
