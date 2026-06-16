@@ -1,4 +1,4 @@
-// Search element in rotated sorted array-2 (unique elements)
+// Search element in rotated sorted array-2 (duplicate elements)
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -21,7 +21,14 @@ int main()
         int mid=(low+high)/2;
         if(a[mid]==target)
         {
-            cout<<"Target found in index "<<mid<<endl;
+            cout << "true" << endl;
+            return 0;
+        }
+        if(a[low]==a[mid] && a[mid]==a[high])
+        {
+            low=low+1;
+            high=high-1;
+            continue;
         }
         if(a[low]<=a[mid])
         {
@@ -38,5 +45,6 @@ int main()
                 high=mid-1;
         }
     }
+    cout << "false" << endl;
     return 0;
 }
