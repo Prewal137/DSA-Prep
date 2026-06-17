@@ -23,7 +23,11 @@ int main()
     {
         int mid=(low+high)/2;
         if(a[mid]!=a[mid-1] && a[mid]!=a[mid+1])
+        {
             cout<<"Single element is "<<a[mid]<<endl;
+            break;
+        }
+
         if((mid%2==1 && a[mid]==a[mid-1])||(mid%2==0 && a[mid]==a[mid+1]))
             low=mid+1;
         else
