@@ -20,7 +20,7 @@ int main()
         int mid=(low+high)/2;
         int noPainters=1;
         int currentBlock=0;
-        for(int i=0;i<n;i++)
+        for(int i=0;i<n;i++)    
         {
             if(currentBlock+a[i]<=mid)
                 currentBlock+=a[i];
