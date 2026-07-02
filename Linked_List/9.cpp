@@ -42,7 +42,6 @@ nodes* reverseLL(nodes* head)
 {
     if(head == NULL || head->next == NULL)
         return head;
-
     nodes* newHead = reverseLL(head->next);
     nodes* front = head->next;
     front->next = head;
